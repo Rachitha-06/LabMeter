@@ -1,0 +1,4 @@
+name,building,lab_type,computer_count,timezone
+Programming Lab 1,Block A,Teaching,60,Asia/Kolkata
+Electronics Lab,Block B,Teaching,30,Asia/Kolkata
+Research Computing Lab,Block C,Research,24,Asia/Kolkata

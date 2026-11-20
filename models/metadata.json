@@ -1,0 +1,72 @@
+{
+  "models": {
+    "linear_regression": {
+      "model_version": "v1",
+      "feature_names": [
+        "hour",
+        "weekday",
+        "month",
+        "is_holiday",
+        "is_exam_period",
+        "scheduled_open",
+        "scheduled_hours",
+        "computer_count",
+        "rated_load_kw",
+        "lag_1d",
+        "lag_2d",
+        "lag_7d",
+        "mean_7d_same_hour"
+      ],
+      "trained_on": {
+        "start": "2026-07-06",
+        "end": "2026-09-19"
+      },
+      "training_rows": 4946,
+      "training_fingerprint": "8bd97a7a00ab8b3bab9e248f5859c0bb5b04def429600e256f85e583bea1df11",
+      "prediction_ceiling_kwh": 16.4946,
+      "sklearn_version": "1.9.1",
+      "created_at": "2026-11-12T01:41:36.199503+00:00",
+      "file": "linear_regression.joblib",
+      "hyperparameters": {
+        "preprocessing": "one-hot + scaled"
+      }
+    },
+    "random_forest": {
+      "model_version": "v1",
+      "feature_names": [
+        "hour",
+        "weekday",
+        "month",
+        "is_holiday",
+        "is_exam_period",
+        "scheduled_open",
+        "scheduled_hours",
+        "computer_count",
+        "rated_load_kw",
+        "lag_1d",
+        "lag_2d",
+        "lag_7d",
+        "mean_7d_same_hour"
+      ],
+      "trained_on": {
+        "start": "2026-07-06",
+        "end": "2026-09-19"
+      },
+      "training_rows": 4946,
+      "training_fingerprint": "8bd97a7a00ab8b3bab9e248f5859c0bb5b04def429600e256f85e583bea1df11",
+      "prediction_ceiling_kwh": 16.4946,
+      "sklearn_version": "1.9.1",
+      "created_at": "2026-11-12T01:41:36.199503+00:00",
+      "file": "random_forest.joblib",
+      "hyperparameters": {
+        "n_estimators": 200,
+        "max_depth": 12,
+        "min_samples_leaf": 5
+      }
+    }
+  },
+  "baseline": {
+    "k": 8,
+    "min_history": 2
+  }
+}

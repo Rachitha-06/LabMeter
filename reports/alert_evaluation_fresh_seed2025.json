@@ -1,0 +1,59 @@
+{
+  "detection": {
+    "created": 0,
+    "already_recorded": 12,
+    "labs": 3,
+    "labs_without_schedule": 0,
+    "days_evaluated": 237,
+    "days_skipped_exam": 30,
+    "days_skipped_holiday": 3,
+    "hours_without_history": 670,
+    "hours_without_reading": 0
+  },
+  "rule": "unoccupied_excess_v1",
+  "labelled_hours": {
+    "suspected_wastage": 42,
+    "legitimate": 44,
+    "data_quality": 12
+  },
+  "flagged_hours": 42,
+  "assessable_hours": 3040,
+  "coverage_of_wastage_hours": 1.0,
+  "recall": 1.0,
+  "recall_on_assessable_hours": 1.0,
+  "precision": 1.0,
+  "false_positive_hours_on_legitimate_periods": 0,
+  "false_positive_hours_on_data_quality_periods": 0,
+  "flagged_hours_with_no_label": 0,
+  "by_anomaly_type": {
+    "missing_data": {
+      "category": "data_quality",
+      "windows": 3,
+      "detected": 0,
+      "assessable": 0
+    },
+    "legitimate_extended_hours": {
+      "category": "legitimate",
+      "windows": 22,
+      "detected": 0,
+      "assessable": 0
+    },
+    "stuck_high_load": {
+      "category": "suspected_wastage",
+      "windows": 3,
+      "detected": 3,
+      "assessable": 3
+    },
+    "after_hours_leftover": {
+      "category": "suspected_wastage",
+      "windows": 9,
+      "detected": 9,
+      "assessable": 9
+    }
+  },
+  "notes": [
+    "Labels are synthetic ground truth from the generator. They are not confirmed waste on any real laboratory.",
+    "The rule is rule-based with fixed thresholds. Nothing was fitted to these labels.",
+    "Coverage shows how much labelled wastage the rule could assess. Hours outside coverage are not judged at all."
+  ]
+}

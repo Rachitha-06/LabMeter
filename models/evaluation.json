@@ -1,0 +1,114 @@
+{
+  "split": {
+    "train": {
+      "start": "2026-07-06",
+      "end": "2026-09-05",
+      "days": 62
+    },
+    "validation": {
+      "start": "2026-09-06",
+      "end": "2026-09-19",
+      "days": 14
+    },
+    "test": {
+      "start": "2026-09-20",
+      "end": "2026-10-03",
+      "days": 14
+    }
+  },
+  "selection": {
+    "baseline_k_validation_mae": {
+      "2": 0.262,
+      "3": 0.2141,
+      "4": 0.1945,
+      "6": 0.1729,
+      "8": 0.154
+    },
+    "baseline_k_chosen": 8,
+    "forest_depth_validation_mae": {
+      "6": 0.2738,
+      "12": 0.2557,
+      "None": 0.2567
+    },
+    "forest_depth_chosen": 12,
+    "validation_mae": {
+      "linear_regression": 0.3396,
+      "random_forest": 0.2557
+    }
+  },
+  "test": {
+    "baseline": {
+      "mae": 0.1374,
+      "rmse": 0.3052
+    },
+    "linear_regression": {
+      "mae": 0.2141,
+      "rmse": 0.332,
+      "vs_baseline": {
+        "mae": {
+          "metric": "MAE",
+          "difference": 0.0767,
+          "ci95": [
+            0.0586,
+            0.0998
+          ],
+          "resamples": 2000,
+          "verdict": "less accurate than the baseline on MAE (95% interval excludes zero)"
+        },
+        "rmse": {
+          "metric": "RMSE",
+          "difference": 0.0267,
+          "ci95": [
+            -0.0357,
+            0.0919
+          ],
+          "resamples": 2000,
+          "verdict": "no clear difference from the baseline on RMSE (95% interval includes zero)"
+        }
+      }
+    },
+    "random_forest": {
+      "mae": 0.1391,
+      "rmse": 0.2973,
+      "vs_baseline": {
+        "mae": {
+          "metric": "MAE",
+          "difference": 0.0016,
+          "ci95": [
+            -0.0204,
+            0.0249
+          ],
+          "resamples": 2000,
+          "verdict": "no clear difference from the baseline on MAE (95% interval includes zero)"
+        },
+        "rmse": {
+          "metric": "RMSE",
+          "difference": -0.0079,
+          "ci95": [
+            -0.0659,
+            0.0486
+          ],
+          "resamples": 2000,
+          "verdict": "no clear difference from the baseline on RMSE (95% interval includes zero)"
+        }
+      }
+    },
+    "hours_compared": 1004,
+    "days_compared": 14
+  },
+  "notes": [
+    "Scores are per hour, in kWh. Each test day is scored with only earlier data.",
+    "Test metrics come from models fitted on the training period. Served models are refit on training plus validation.",
+    "Features exclude occupancy and session bookings, which the data does not contain.",
+    "Calendar holidays and exam periods come from the synthetic calendar, not an official academic calendar.",
+    "Only hours where the baseline and both models can predict are compared."
+  ],
+  "data": {
+    "laboratories": [
+      "Electronics Lab",
+      "Programming Lab 1",
+      "Research Computing Lab"
+    ],
+    "fingerprint": "8bd97a7a00ab8b3bab9e248f5859c0bb5b04def429600e256f85e583bea1df11"
+  }
+}
